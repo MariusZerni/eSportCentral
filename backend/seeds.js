@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 const Event = require('./models/eventModel')
 const User = require('./models/user')
-const dbURI = 'mongodb://localhost/events-db'
-
+const { dbURI } = require('./config/environment')
 mongoose.connect(
   dbURI,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },

@@ -2,8 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const router = require('./router')
+const { dbURI, port } = require('./config/environment')
+const path = require('path')
+const dist = path.join(__dirname, 'dist')
 mongoose.connect(
-  'mongodb://localhost/events-db',
+  dbURI,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
   
   err => {
@@ -32,5 +35,10 @@ expressServer.use((req, res, next) => {
 
 expressServer.use('/api', router)
 
+expressServer.use('/', express.static(dist))
 
-expressServer.listen(8000)
+expressServer.get('*', function(req, res) {
+  res.sendFile(path.join(dist, 'index.html'))
+})
+
+expressServer.listen(port)
