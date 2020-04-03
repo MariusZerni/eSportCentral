@@ -50,7 +50,7 @@ class Events extends React.Component {
     console.log('Fetching leagues')
     axios
       .get(
-        'https://api.pandascore.co/series?token=1wCqgz0G63stMjHHwN0Bn2itQVq1z2Pc7szHZNR4MHpGWqkDy5o'
+        'https://cors-anywhere.herokuapp.com/https://api.pandascore.co/series?token=1wCqgz0G63stMjHHwN0Bn2itQVq1z2Pc7szHZNR4MHpGWqkDy5o'
       )
       .then(res => {
         this.setState({ leagues: res.data, currentSelection: 'Leagues' })
@@ -79,7 +79,7 @@ class Events extends React.Component {
   fetchLiveGames() {
     axios
       .get(
-        'https://api.pandascore.co/lives?token=1wCqgz0G63stMjHHwN0Bn2itQVq1z2Pc7szHZNR4MHpGWqkDy5o'
+        'https://cors-anywhere.herokuapp.com/https://api.pandascore.co/lives?token=1wCqgz0G63stMjHHwN0Bn2itQVq1z2Pc7szHZNR4MHpGWqkDy5o'
       )
       .then(res => {
         console.log(res.data)
@@ -88,32 +88,29 @@ class Events extends React.Component {
       .catch(error => console.error(error))
   }
   componentDidMount() {
-    // console.log(this.props.location.state)
-    // if (this.props.location.state === null) {
-    //   console.log('null state')
-      
-    // }
-    this.fetchAllGames()
-    //  else if (this.props.location.state !== null && this.props.location.state.currentSelection !== null){
+    if (!this.props.location.state) {
+      this.fetchAllGames()
 
-    //   console.log(this.props.location.state)
-    //   const currentState = this.props.location.state.currentSelection
-    //   console.log(currentState)
+    } else if (this.props.location.state && this.props.location.state.currentSelection) {
 
-    //   if (currentState === 'Games') {
-    //     console.log('selected Games')
-    //     this.fetchAllGames()
-    //   } else if (currentState === 'Leagues'){
-    //     this.fetchLeagues()
+      console.log(this.props.location.state)
+      const currentState = this.props.location.state.currentSelection
+      console.log(currentState)
 
-    //   } else if (currentState === 'LocalEvents'){
-    //     this.fetchLocalEvents()
-      
-    //   } else if (currentState === 'LiveGames'){
-    //     this.fetchLiveGames()
-    //   }
+      if (currentState === 'Games') {
+        console.log('selected Games')
+        this.fetchAllGames()
+      } else if (currentState === 'Leagues') {
+        this.fetchLeagues()
 
-    // }
+      } else if (currentState === 'LocalEvents') {
+        this.fetchLocalEvents()
+
+      } else if (currentState === 'LiveGames') {
+        this.fetchLiveGames()
+      }
+
+    }
   }
 
   handleLocalEvents() {
