@@ -18,25 +18,40 @@ In the context of being confined to staying indoors people are looking for ways 
 - HTML6
 - SCSS
 - JavaScript (ES6)
-- React.js
-- Express
-- Mongo and Mongoose
+- NPM (package management)
+- Node.js
+- Express (JS Framework)
+- Mongo and Mongoose (Database and Database manipulation)
+- Insomnia (testing APIs)
 - React 
 - Moment
 - Git and GitHub
+- Heroku
 - Bulma and Bulma Calendar
 - Google Fonts
 - LucidChart - for creating wireframes of the project
 - Trello for project management
 
+## Structure
+The project will be structured in:
+- Building the API routes with express
+- Modeling data for the API
+- Communicating with Mongo through Mongoose
+- Finalizing and testing the API
+- Creating the frontend components using React
+- Styling the components to create a user friendly and consolidated experience
+- Deploying the app using Heroku
+
+## Wireframe
+![Image of wireframe](https://github.com/bababumBab/Project-3/blob/master/frontend/images/wireframe.jpeg)
+
+
 ## Approach
+Create a functional backend that can store events, usernames and passwords. Connect the backend with an initially simplified frontend and build upon creating multiple React components that render new content by changing state on the main 'Hub" page.
 
-Create a functional backend that can store events, usernames and password. Connect the backend with a simplified frontend and build upon creating multiple React components that render new content by changing state on the main 'Hub" page.
+We tried to work in an agile manner by getting small functionalities working as quick as possible to give us a quick overview of how the app should function and to be able to adjust to different challenges along the way. 
 
-We tried to work in an agile manner by getting small functionalities working as quick as possible in order to be easy to change 
-and improve the functionality of the app. 
-
-Our aim was to make things easier for people to find new sources of eSports online.
+Our main aim was to create something that will make things easier for people to find in one place all the sources of eSports - from proffesional gaming leagues to streamers.
 
 
 First step was to create a functional database and connect to it using Mongoose.
@@ -273,17 +288,24 @@ Building a robust and an appealing frontend was from the start one of the main g
 
 ## Challenges
 
+- Biggest challenge was to work on the most complex component of the project - Hub Page. We assigned different features amongst the team. Putting together all of our code was the more interesting and rewarding challenge, but a challenge not to be repeated.
+- Manipulating the limited data received from the FACEIT API in order to create some valuable content for our app.
+- Finding another suitable API to work alongside the FACEIT API. 
+
 
 
 ## Victories 
-
+- Creating working authentification for users, storing in the backend database created on Mondodb.
+- Making a unified design across all pages, following the general theme of a gaming environment. 
+- Being able to render different states on the Hub page without changing actually the page.
+- Developing the ability to work together as a team in a very short time.
+- Deployed the project succesfully on Heroku and learned on how to manage the app via Heroku.
 
 ## Potential future features
 
 - Mobile friendly
-- Ability to create groups between friends
-- 
-
+- Ability to create private groups between friends
 
 ## Lessons learned
-
+- Split from the beginning the components to avoid conflicts when merging to the code base onto Github.
+- Focus on the functionality first and after on the design part. Working project trumps good looking project.
