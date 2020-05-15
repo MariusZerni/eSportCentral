@@ -327,7 +327,7 @@ Building a robust and appealing front end was from the start one of the main goa
 - Finding another suitable API to work alongside the FaceIt API. 
 
 
-## Victories 
+## Wins
 - Implementing user authentication, storing user inforamtion and events in the Mongo database.
 - Making a unified design across all pages, following the general theme of a gaming environment. 
 - Being able to render different states on the Hub page without changing the page.
