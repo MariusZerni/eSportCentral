@@ -1,15 +1,15 @@
 #### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
 
-# 'The eSports Events App'
+# "e-Sports Events App"
 
 ## Overview
 
-In the context of being confined to staying indoors, people are looking for ways to distract themselves. A safe way to entertain and not think about the context of the year 2020 is to play online games and find a way to connect with like minded individuals. eSports is a way to find new live entertainment. People are interested in seeing proffesional gamers in action. This app brings together multiple APIs, creating an integrated platform to easily access eSports events.
+In the context of being confined to staying indoors, people are looking for ways to distract themselves. A safe way to entertain and not think about the context of the year 2020 is to play online games and find a way to connect with like minded individuals. eSports is a way to find new live entertainment. People are interested in seeing professional gamers in action. This app brings together multiple APIs, creating an integrated platform to easily access eSports events.
 
 
 ## Brief
 
-* Work in a team, using **git to code collaboratively**.
+* Work in a team, using **git to code collaboratively**
 * **Build a full-stack application** by making your own back end and your own front end
 * **Use an Express API** to serve your data from a Mongo database
 * **Consume your API with a separate front end** built with React
@@ -30,8 +30,8 @@ In the context of being confined to staying indoors, people are looking for ways
 - Heroku
 - Bulma and Bulma Calendar
 - Google Fonts
-- LucidChart - for creating wireframes of the project
-- Trello for project management
+- LucidChart (for creating wireframes of the project)
+- Trello (for project management)
 
 ## Structure
 The project was structured using the following building blocks:
@@ -52,7 +52,7 @@ Create a functional backend that can store events, usernames and passwords. Conn
 
 We tried to work in an Agile manner by getting small functionalities working as soon as possible to give us a quick overview of how the app should function and to be able to adjust to different challenges along the way. 
 
-Our main aim was to create a platform to help people find in one place all the sources of eSports - from proffesional gaming leagues to streamers.
+Our main aim was to create a platform to help people move in one place after all the sources of e-Sports - from professional gaming leagues to streamers.
 
 
 First step was to create a functional database and connect to it using Mongoose.
@@ -234,7 +234,7 @@ schema.methods.validatePassword = function validatePassword(password) {
 module.exports = mongoose.model('User', schema)
 ```
 
-Below is an example of the secrets that together with the token creates a stronger authentification (jwt).
+Below is an example of the secrets that together with the token create a stronger authentification (jwt).
 
 ```js
 For the User Schema we had to use encryption for the passwords and to generate tokens. 
@@ -246,7 +246,7 @@ module.exports = {
 }
 ```
 
-The following snippet of code uses the local browser storage to cache the user token and to detect if the user is logged in. 
+The following snippet of code uses the local browser storage to cache the user token and detect if the user is logged in. 
 
 ```js
 function setToken(token) {
@@ -282,7 +282,7 @@ export default {
 }
 ```
 
-On the backend we are validating the token and creating a secure route. 
+On the backend, we are validating the token and creating a secure route. 
 ```js
 const User = require('../models/user')
 const { secret } = require('../config/environment')
@@ -316,29 +316,29 @@ function secureRoute(req, res, next) {
 module.exports = secureRoute
 ```
 
-Building a robust and appealing front end was from the start one of the main goals we had as a team. We decided to split the components to avoid merging conflicts and frequently merge our changes so that we can review each other's code.
+Building a robust and appealing front end was from the start one of the main goals we had as a team. We decided to split the components to avoid merging conflicts and frequently merge our changes so that we could review each other's code.
 
 
 
 ## Challenges
 
-- The biggest challenge was to work on the most complex component of the project, the Hub Page. We assigned different features amongst the team. Putting together all of our code was the more interesting and rewarding challenge.
+- The biggest challenge was to work on the most complex component of the project, the Hub Page. We assigned different features amongst the team. Putting together all of our code was the most interesting and rewarding challenge.
 - Manipulating the limited data received from the FaceIt API in order to create some valuable content for our app.
 - Finding another suitable API to work alongside the FaceIt API. 
 
 
 ## Wins
-- Implementing user authentication, storing user inforamtion and events in the Mongo database.
+- Implementing user authentication, storing user information and events in the Mongo database.
 - Making a unified design across all pages, following the general theme of a gaming environment. 
 - Being able to render different states on the Hub page without changing the page.
-- Working together as a team.
-- Deploying the project succesfully on Heroku and managing the app via Heroku.
+- Working together seamlessly as a team.
+- Deploying the project succesfully and managing the app via Heroku.
 
 ## Potential future features
 
 - Mobile friendly
-- Ability to create private groups between friends
+- Ability to create private groups among friends
 
 ## Lessons learned
 - Splitting from the beginning the components to avoid merging conflicts.
-- Focusing on the functionality first and only after on the design part. 
+- Focusing on the functionality first and only after on the design. 
